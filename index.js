@@ -44,6 +44,6 @@ app.use(express.static("storage"))
 
 // run app
 
-app.listen(PORT, ()=>{
+app.listen(PORT || 3333, ()=>{
     console.log(`app running on port ${PORT}`)
 })
