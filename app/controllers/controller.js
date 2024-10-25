@@ -1,5 +1,14 @@
 export const demo1 = async (req, res)=> {
-    return res.json({message:"created successfully"})
+    // params
+    let name = req.params.name;
+    let age = req.params.age;
+    let city = req.params.city;
+
+    return res.json({
+        name: name,
+        age: age,
+        city: city
+    })
 }
 
 // export const createController = async (req, res)=> {

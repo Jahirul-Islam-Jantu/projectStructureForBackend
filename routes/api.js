@@ -2,7 +2,8 @@ import express from "express"
 const router = express.Router()
 
 import * as controller from "../app/controllers/controller.js"
-import {demo1 ,createController, readController} from "../app/controllers/controller.js";
+// import {demo1 ,createController, readController} from "../app/controllers/controller.js";
+import {demo1} from "../app/controllers/controller.js";
 
 
 
