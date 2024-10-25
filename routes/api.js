@@ -3,12 +3,18 @@ const router = express.Router()
 
 import * as controller from "../app/controllers/controller.js"
 // import {demo1 ,createController, readController} from "../app/controllers/controller.js";
-import {demo1} from "../app/controllers/controller.js";
+import {demo1, demo2, demo3} from "../app/controllers/controller.js";
 
 
 
 // request params & query string
 router.post("/demo1/:name/:age/:city", controller.demo1)
+
+// request body JSON
+router.post("/demo2", controller.demo2)
+
+// request form data JSON
+router.post("/demo3", controller.demo3)
 
 /*
 // Create
