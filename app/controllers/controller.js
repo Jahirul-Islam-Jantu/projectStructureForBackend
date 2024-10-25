@@ -1,4 +1,4 @@
-import {json} from "express";
+import {json, query} from "express";
 
 export const demo1 = async (req, res)=> {
     // params
@@ -36,18 +36,18 @@ export const demo2 = async (req, res)=> {
         city: reqBody.city,
         country: reqBody.country,
         salary: reqBody.salary,
+        email: reqBody.email,
+        password: reqBody.password,
 
     })
 }
-export const demo3 = async (req, res)=> {
-    let reqBody = req.body;
-
-    return res.json({
-        message: reqBody
-        // email: reqBody.email,
-        // password: reqBody.password,
-    })
-}
+// export const demo3 = async (req, res)=> {
+//     let reqBody = req.body;
+//     return res.json({
+//         email: reqBody.email,
+//         password: reqBody.password,
+//     })
+// }
 
 
 
