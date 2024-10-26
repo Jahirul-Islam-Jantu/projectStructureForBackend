@@ -17,7 +17,7 @@ router.post("/demo2", controller.demo2)
 router.post("/formData", controller.formData)
 
 //request file from user
-router.post("/file", controller.file)
+router.post("/fileData", controller.file)
 /*
 // Create
 router.post("/createController", controller.createController)

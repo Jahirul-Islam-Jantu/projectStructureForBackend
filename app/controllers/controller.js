@@ -48,17 +48,11 @@ export const formData = async (req, res)=> {
     })
 }
 export const file = async (req, res)=> {
-    let pic = req.files;
-    let body = req.body;
-    return res.json({
-        pic: pic,
-        body: body,
-    })
+    let pic = req.files['pic']
+
+    return res.json({message: pic})
+
 }
-
-
-
-
 
 
 // export const createController = async (req, res)=> {

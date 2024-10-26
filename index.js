@@ -7,8 +7,8 @@ import hpp from "hpp"
 import cookieParser from "cookie-parser"
 import * as path from "path"
 import router from ".//routes/api.js";
-import fileUpload from "express-fileupload";
 import {MONGODB_CONNECTION, PORT, MAX_JSON_SIZE, URL_ENCODING, WEB_CACHE, REQUEST_LIMIT_NUMBER, REQUEST_LIMIT_TIME} from "./app/config/config.js"
+import fileUpload from "express-fileupload";
 
 
 const app = express()
