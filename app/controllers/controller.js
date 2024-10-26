@@ -36,18 +36,25 @@ export const demo2 = async (req, res)=> {
         city: reqBody.city,
         country: reqBody.country,
         salary: reqBody.salary,
-        email: reqBody.email,
-        password: reqBody.password,
+
 
     })
 }
-// export const demo3 = async (req, res)=> {
-//     let reqBody = req.body;
-//     return res.json({
-//         email: reqBody.email,
-//         password: reqBody.password,
-//     })
-// }
+export const formData = async (req, res)=> {
+    let reqBody = req.body;
+    return res.json({
+        email: reqBody.email,
+        password: reqBody.password,
+    })
+}
+export const file = async (req, res)=> {
+    let pic = req.files;
+    let body = req.body;
+    return res.json({
+        pic: pic,
+        body: body,
+    })
+}
 
 
 
