@@ -49,8 +49,9 @@ export const formData = async (req, res)=> {
 }
 export const file = async (req, res)=> {
     let pic = req.files
+    let resBody = req.body
 
-    return res.json({message: pic})
+    return res.json({message: resBody})
 
 }
 
