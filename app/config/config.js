@@ -1,4 +1,6 @@
-export const MONGODB_CONNECTION = ""
+import path from 'node:path'
+
+export const MONGODB_CONNECTION = "mongodb+srv://jahirulislamjantu:<db_password>@cluster0.p4v3cyf.mongodb.net/"
 export const JWT_SECRET = ""
 export const JWT_EXPIRATION_DURATION = 60*60*24*30;
 

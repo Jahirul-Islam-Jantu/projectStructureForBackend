@@ -31,7 +31,7 @@ export const demo2 = async (req, res)=> {
     return res.json({
         fname: reqBody.fname,
         lname: reqBody.lname,
-        age: reqBody.age,
+        age: reqBody.age, 
         profession: reqBody.profession,
         city: reqBody.city,
         country: reqBody.country,
@@ -51,7 +51,7 @@ export const file = async (req, res)=> {
     let pic = req.files
     let resBody = req.body
 
-    return res.json({message: resBody})
+    return res.json({message: resBody, pic})
 
 }
 
