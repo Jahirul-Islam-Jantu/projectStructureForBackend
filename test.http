@@ -1,0 +1,2 @@
+### GET request to example server
+GET localhost:5050/api/feature1/TokenEncode
