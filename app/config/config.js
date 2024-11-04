@@ -1,7 +1,7 @@
 import path from 'node:path'
 
-export const MONGODB_CONNECTION = "mongodb+srv://jahirulislamjantu:<db_password>@cluster0.p4v3cyf.mongodb.net/"
-export const JWT_SECRET = ""
+export const MONGODB_CONNECTION = "mongodb+srv://unchangedjahir:jan742682@mernstack.tose2.mongodb.net/"
+export const JWT_SECRET = "e5c843c644b2beaf141e4ed0cdae3d4cf2092f68a5d999335e5ec8d1b1cfddb4"
 export const JWT_EXPIRATION_DURATION = 60*60*24*30;
 
 export const EMAIL_HOST = ""
@@ -17,4 +17,8 @@ export const REQUEST_LIMIT_NUMBER = 3000
 
 export const WEB_CACHE = false
 export const PORT = 5050
+
+export function UPLOAD_FOLDER(fileName){
+    return path.resolve(process.cwd(), "storage", fileName)
+}
 

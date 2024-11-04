@@ -34,6 +34,12 @@ app.set('etag', WEB_CACHE)
 
 // MongoDB connection
 
+mongoose.connect(MONGODB_CONNECTION, {autoIndex: true}).then(()=>{
+    console.log("connected to MongoDB")
+}).catch(err=>{
+    console.log(err)
+})
+
 
 // set Api
 
