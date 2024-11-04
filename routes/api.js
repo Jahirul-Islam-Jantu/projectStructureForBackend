@@ -1,10 +1,12 @@
 import express from "express"
 const router = express.Router()
 import * as FeaturesController from "../app/controllers/FeaturesControll.js"
-import {tokenEncode} from "../app/controllers/FeaturesControll.js";
+// import {SendEmail} from "../app/controllers/FeaturesControll.js";
+
 
 router.get("/feature1/TokenEncode", FeaturesController.tokenEncode)
 router.get("/feature2/DecodeToken", FeaturesController.tokenDecode)
+router.get("/sendMail", FeaturesController.SendEmail)
 
 
 
