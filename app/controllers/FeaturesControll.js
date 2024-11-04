@@ -12,16 +12,25 @@ export const tokenDecode = async (req, res, next) => {
 }
 
 
-export const SendEmail = async (req, res, next) => {
-    const EmailTo = "jahirulislamjantu002@gmail.com";
-    const EmailText = "This is a demo email text sent from server";
-    const EmailSubject = "This is an email subject";
-    const EmailHTMLBody = "This is Email Body";
+export const SendEmail = (req, res) => {
+        EmailSend()
+      return res.json({
+          emailStatus: true,
+          email: "sent"
 
-    const result = await EmailSend(EmailTo, EmailText, EmailSubject, EmailHTMLBody);
+      })
 
-    if (!result) {
-        return res.status(500).json({ emailStatus: false, message: "Failed to send email." });
-    }
-    return res.json({ emailStatus: true });
 };
+// export const SendEmail = async (req, res) => {
+//     const EmailTo = "jahirulislamjantu002@gmail.com";
+//     const EmailText = "This is a demo email text sent from server";
+//     const EmailSubject = "This is an email subject";
+//     const EmailHTMLBody = "This is Email Body";
+//
+//     const result = await EmailSend(EmailTo, EmailText, EmailSubject, EmailHTMLBody);
+//
+//     if (result) {
+//     return res.json({ emailStatus: true });
+//     }
+//     return res.status(500).json({ emailStatus: false, message: "Failed to send email." });
+// };
