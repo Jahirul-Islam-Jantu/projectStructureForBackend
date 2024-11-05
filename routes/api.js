@@ -9,6 +9,8 @@ router.get("/feature1/TokenEncode", FeaturesController.tokenEncode)
 router.get("/feature2/DecodeToken", FeaturesController.tokenDecode)
 router.get("/sendEmail", FeaturesController.SendEmail)
 router.get("/feature4/Profile", ProfileMiddleware,  FeaturesController.Profile)
+router.get("/feature5/MyCookies",  FeaturesController.MyCookies)
+router.get("/feature6/CookieRemove",  FeaturesController.CookieRemove)
 
 
 

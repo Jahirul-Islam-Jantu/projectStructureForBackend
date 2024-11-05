@@ -25,9 +25,29 @@ export const SendEmail = (req, res) => {
 export const Profile = async (req, res) => {
     res.json({status: "ok"})
 }
+export const MyCookies = async (req, res) => {
+    let cookieOptions = {
+        expires:new Date( Date.now() + 1000 * 1000),
+        httpOnly: true,
+        sameSite: true,
+    }
+    let data = "jahirulislamjantu@gmail.com"
+    let cookieName = "MyCookie"
+    res.cookie(cookieName, data, cookieOptions)
+    res.json({response: "ok"})
+}
 
-
-
+export const CookieRemove = async function(req, res){
+    let cookieOptions = {
+        expires:new Date( Date.now() - 1000 * 1000),
+        httpOnly: true,
+        sameSite: true,
+    }
+    let data = {}
+    let cookieName = "MyCookie"
+    res.cookie(cookieName, data, cookieOptions)
+    res.json({response: "ok"})
+}
 
 
 
