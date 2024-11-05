@@ -12,6 +12,7 @@ import fileUpload from "express-fileupload";
 
 
 const app = express()
+app.use(fileUpload())
 
 
 //Global app middleware

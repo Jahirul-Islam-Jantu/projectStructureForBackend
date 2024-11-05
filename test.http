@@ -4,4 +4,5 @@
 #GET localhost:5050/api/sendEmail
 #GET localhost:5050/api/feature4/Profile
 #GET localhost:5050/api/feature5/MyCookies
-GET localhost:5050/api/feature6/CookieRemove
+#GET localhost:5050/api/feature6/CookieRemove
+#POST localhost:5050/api/feature7/FileUpload

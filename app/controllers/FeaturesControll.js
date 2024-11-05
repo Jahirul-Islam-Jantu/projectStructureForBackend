@@ -1,5 +1,7 @@
 import {DecodeToken, EncodeToken} from "../utils/tokenHelper.js";
 import {EmailSend} from "../utils/emailHelper.js"
+import path from "node:path";
+
 
 export const tokenEncode = async (req, res) => {
     let result =  EncodeToken("jahirulislamjantu@gmail.com", "jan742682")
@@ -49,6 +51,52 @@ export const CookieRemove = async function(req, res){
     res.json({response: "ok"})
 }
 
+export const FileUpload = async (req, res) => {
+    // Check if files were uploaded
+    if (!req.files || !req.files['myStd']) {
+        return res.status(400).send({ "Upload Error": "No file uploaded" });
+    }
+
+    // Catch the file
+    let myStd = req.files['myStd'];
+    let myFileName = myStd.name;
+
+    // Create file path
+    let myFilePath = path.resolve(process.cwd(), "storage", myFileName);
+
+    // Move the file
+    myStd.mv(myFilePath, (err) => {
+        if (err) {
+            return res.status(500).send({ "Upload Error": err });
+        } else {
+            return res.status(200).json({ "Upload File": myFilePath });
+        }
+    });
+};
+
+
+
+
+
+
+
+// export const FileUpload = async (req, res) => {
+//     // Catch the file
+//     let myPic = req.files['myImg']
+//     let myFileName = myPic.name
+//
+//     // create file path
+//     let myFilePath = path.resolve(process.cwd(), "storage", myFileName)
+//
+//     // move the file
+//     myPic.mv(myFilePath, (err, data) => {
+//         if (err) {
+//             return res.status(500).send({"Upload Error": err})
+//         }else {
+//             return res.status(200).json({"Upload File": myFilePath})
+//         }
+//     })
+// }
 
 
 
