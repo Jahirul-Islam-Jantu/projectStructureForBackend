@@ -1,12 +1,14 @@
 import express from "express"
 const router = express.Router()
 import * as FeaturesController from "../app/controllers/FeaturesControll.js"
+import  {ProfileMiddleware} from "../app/middleware/authMiddleware.js"
 
 
 
 router.get("/feature1/TokenEncode", FeaturesController.tokenEncode)
 router.get("/feature2/DecodeToken", FeaturesController.tokenDecode)
 router.get("/sendEmail", FeaturesController.SendEmail)
+router.get("/feature4/Profile", ProfileMiddleware,  FeaturesController.Profile)
 
 
 
