@@ -12,7 +12,7 @@ router.get("/feature5/MyCookies", FeaturesController.MyCookies);
 router.get("/feature6/CookieRemove", FeaturesController.CookieRemove);
 router.post("/feature7/FileUpload", FeaturesController.FileUpload);
 router.post("/userCreate", UserController.CreateUser);
-router.post("/getAllUsers", UserController.getUsers);
+router.get("/getAllUsers", UserController.getUsers);
 
 // import * as controller from "../app/controllers/controller.js"
 // // import {demo1 ,createController, readController} from "../app/controllers/controller.js";

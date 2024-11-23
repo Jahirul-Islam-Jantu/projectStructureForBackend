@@ -22,11 +22,11 @@ export const getUsers = async (req, res) => {
     if (result) {
       res
         .status(201)
-        .json({ message: "User create successfully", user: result });
+        .json({ message: "All Users request send successfully", user: result });
     } else {
-      res.status(400).json({ message: "User create failed" });
+      res.status(400).json({ message: "Find user failed" });
     }
   } catch (e) {
-    res.status(400).json({ message: "User create failed" });
+    res.status(400).json({ message: "User didn't found failed" });
   }
 };
