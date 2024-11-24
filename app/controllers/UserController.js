@@ -45,4 +45,17 @@ export const singleUser = async (req, res) => {
   }
 };
 
-export const 
+export const updateUser = async (req, res) => {
+  try {
+    let id = req.params.id;
+    let reqBody = req.body;
+    let result = await UserModel.updateOne({ id: id }, reqBody);
+    if (result) {
+      res.status(200).json({ message: "Success", user: result });
+    } else {
+      res.status(400).json({ message: "Update User failed" });
+    }
+  } catch (e) {
+    res.status(400).json({ message: "User didn't found " });
+  }
+};
