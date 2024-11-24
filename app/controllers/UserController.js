@@ -21,12 +21,28 @@ export const getUsers = async (req, res) => {
     let result = await UserModel.find();
     if (result) {
       res
-        .status(201)
+        .status(200)
         .json({ message: "All Users request send successfully", user: result });
     } else {
       res.status(400).json({ message: "Find user failed" });
     }
   } catch (e) {
-    res.status(400).json({ message: "User didn't found failed" });
+    res.status(400).json({ message: "User didn't found" });
   }
 };
+
+export const singleUser = async (req, res) => {
+  try {
+    let id = req.params.id;
+    let result = await UserModel.findOne({ id: id });
+    if (result) {
+      res.status(200).json({ message: "Success", user: result });
+    } else {
+      res.status(400).json({ message: "Find user failed" });
+    }
+  } catch (e) {
+    res.status(400).json({ message: "User didn't found " });
+  }
+};
+
+export const 
