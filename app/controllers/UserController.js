@@ -64,12 +64,10 @@ export const updateUser = async (req, res) => {
 export const DeleteUser = async (req, res) => {
   try {
     let id = req.params.id;
-    let result = await UserModel.updateOne({ id: id });
-    if (result) {
-      res.status(200).json({ message: "Success", user: UserModel.find() });
-    } else {
-      res.status(400).json({ message: "Delete User failed" });
-    }
+    await UserModel.deleteOne({ _id: id });
+    res
+      .status(200)
+      .json({ message: "Success", message: "User deleted successfully" });
   } catch (e) {
     res.status(400).json({ message: "User didn't found " });
   }
