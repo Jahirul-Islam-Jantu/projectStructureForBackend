@@ -59,3 +59,17 @@ export const updateUser = async (req, res) => {
     res.status(400).json({ message: "User didn't found " });
   }
 };
+
+export const DeleteUser = async (req, res) => {
+  try {
+    let id = req.params.id;
+    let result = await UserModel.updateOne({ id: id });
+    if (result) {
+      res.status(200).json({ message: "Success", user: UserModel.find() });
+    } else {
+      res.status(400).json({ message: "Delete User failed" });
+    }
+  } catch (e) {
+    res.status(400).json({ message: "User didn't found " });
+  }
+};
