@@ -33,8 +33,9 @@ export const getUsers = async (req, res) => {
 
 export const singleUser = async (req, res) => {
   try {
-    let id = req.params.id;
-    let result = await UserModel.findOne({ id: id });
+    let email = req.email;
+    let id = req._id;
+    let result = await UserModel.findOne({ _id: id, email: email });
     if (result) {
       res.status(200).json({ message: "Success", user: result });
     } else {
@@ -49,7 +50,7 @@ export const updateUser = async (req, res) => {
   try {
     let id = req.params.id;
     let reqBody = req.body;
-    let result = await UserModel.updateOne({ id: id }, reqBody);
+    let result = await UserModel.updateOne({ _id: id }, reqBody);
     if (result) {
       res.status(200).json({ message: "Success", user: result });
     } else {
