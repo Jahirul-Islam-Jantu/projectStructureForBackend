@@ -14,6 +14,8 @@ router.post("/feature7/FileUpload", FeaturesController.FileUpload);
 router.post("/userCreate", UserController.CreateUser);
 router.get("/getAllUsers", UserController.getUsers);
 router.get("/singleUser/:id", UserController.singleUser);
+router.post("/updateUser/:id", UserController.updateUser);
+router.delete("/deleteUser/:id", UserController.DeleteUser);
 
 // import * as controller from "../app/controllers/controller.js"
 // // import {demo1 ,createController, readController} from "../app/controllers/controller.js";
